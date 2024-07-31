@@ -91,4 +91,11 @@ const getBookDetailsByAuthor = async (author) => {
 
 getBookDetailsByAuthor("Honoré de Balzac");
 
+const getBookDetailsByTitle = async (title) => {
+  const response = await axios.get("http://localhost:5000/title/" + title);
+  console.log(response.data)
+}
+
+getBookDetailsByTitle("The Epic Of Gilgamesh");
+
 module.exports.general = public_users;
