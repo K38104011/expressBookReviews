@@ -1,4 +1,5 @@
 const express = require('express');
+const axios = require('axios');
 let books = require("./booksdb.js");
 let isValid = require("./auth_users.js").isValid;
 let users = require("./auth_users.js").users;
@@ -68,5 +69,12 @@ public_users.get('/review/:isbn',function (req, res) {
   if (isbn in books) return res.send(books[isbn].reviews);
   return res.sendStatus(404);
 });
+
+const getBooks = async () => {
+  const response = await axios.get("http://localhost:5000");
+  console.log(response.data)
+}
+
+getBooks();
 
 module.exports.general = public_users;
