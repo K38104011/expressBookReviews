@@ -77,4 +77,11 @@ const getBooks = async () => {
 
 getBooks();
 
+const getBookDetailsByISBN = async (isbn) => {
+  const response = await axios.get("http://localhost:5000/isbn/" + isbn);
+  console.log(response.data)
+}
+
+getBookDetailsByISBN(1);
+
 module.exports.general = public_users;
