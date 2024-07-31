@@ -84,4 +84,11 @@ const getBookDetailsByISBN = async (isbn) => {
 
 getBookDetailsByISBN(1);
 
+const getBookDetailsByAuthor = async (author) => {
+  const response = await axios.get("http://localhost:5000/author/" + author);
+  console.log(response.data)
+}
+
+getBookDetailsByAuthor("Honoré de Balzac");
+
 module.exports.general = public_users;
